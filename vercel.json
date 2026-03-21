@@ -3,7 +3,6 @@
   "outputDirectory": "app/dist",
   "installCommand": "cd app && npm install",
   "framework": "vite",
-  "publicDirectory": "app/public",
   "routes": [
     {
       "src": "/images/(.*)",
