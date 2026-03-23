@@ -1,5 +1,4 @@
 {
-  "_comment": "Deployment configuration - updated 2026-03-21",
   "buildCommand": "cd app && npm run build",
   "outputDirectory": "app/dist",
   "installCommand": "cd app && npm install",
