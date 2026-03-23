@@ -3,14 +3,10 @@
   "outputDirectory": "app/dist",
   "installCommand": "cd app && npm install",
   "framework": "vite",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
