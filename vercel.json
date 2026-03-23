@@ -3,7 +3,7 @@
   "outputDirectory": "app/dist",
   "installCommand": "cd app && npm install",
   "framework": "vite",
-  "rootDirectory": "app",
+
   "cleanUrls": true,
   "rewrites": [
     {
