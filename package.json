@@ -1,0 +1,8 @@
+{
+  "name": "jones-narrative-labs-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "vercel-build": "cd app && npm install && npm run build"
+  }
+}
