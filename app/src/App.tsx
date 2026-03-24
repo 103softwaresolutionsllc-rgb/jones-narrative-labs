@@ -8,7 +8,6 @@ import {
   Facebook, 
   Instagram, 
   Linkedin, 
-  Youtube,
   Video,
   Mail,
   ShoppingCart,
@@ -27,7 +26,6 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
-import { ResponsiveImage } from '@/components/ui/responsive-image'
 import { OptimizedHeroImage } from '@/components/ui/optimized-hero-image'
 
 // Navigation Component
@@ -1257,14 +1255,14 @@ function FooterSection() {
       setTimeout(() => setSubscribed(false), 3000)
     }
   }
-
+  
   const socialLinks = [
     { name: 'Twitter', icon: Twitter, href: 'https://x.com/ijones392262' },
     { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ijones392262' },
     { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ijones392262' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/isaac-e-jones-iii-05ba96345?utm_source=share_via&utm_content=profile&utm_medium=member_ios' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/isaac-e-jones-iii-05ba96345' },
     { name: 'TikTok', icon: Video, href: 'https://tiktok.com/@ijones392262' },
-  ]
+  ];
 
   return (
     <footer 
