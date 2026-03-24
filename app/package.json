@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node -e \"const fs=require('fs'),p='node_modules/.bin';['vite','tsc'].forEach(b=>{try{fs.chmodSync(p+'/'+b,0o755)}catch(e){}})\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
