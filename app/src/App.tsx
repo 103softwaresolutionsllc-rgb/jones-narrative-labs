@@ -669,7 +669,7 @@ function BooksSection() {
           style={{ transitionDelay: '800ms' }}
         >
           <Button asChild size="lg" variant="outline" className="border-2 border-black hover:bg-black hover:text-white transition-all duration-300 group">
-            <a href="/assets/all-books.html" target="_blank" rel="noopener noreferrer">
+            <a href="/assets/all-books.html">
               View All Books
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </a>
@@ -1045,7 +1045,9 @@ function UpdatesSection() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
               }`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}
-              onClick={() => window.open(article.url, '_blank', 'noopener,noreferrer')}
+              onClick={() => {
+                window.location.href = article.url
+              }}
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -1075,8 +1077,6 @@ function UpdatesSection() {
                 </p>
                 <a 
                   href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium text-coral hover:underline"
                 >
                   Read More
@@ -1095,7 +1095,7 @@ function UpdatesSection() {
           style={{ transitionDelay: '900ms' }}
         >
           <Button asChild size="lg" variant="outline" className="border-2 border-black hover:bg-black hover:text-white transition-all duration-300 group">
-            <a href="/assets/all-articles.html" target="_blank" rel="noopener noreferrer">
+            <a href="/assets/all-articles.html">
               Read All Articles
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </a>
