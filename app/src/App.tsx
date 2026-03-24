@@ -668,13 +668,11 @@ function BooksSection() {
           }`}
           style={{ transitionDelay: '800ms' }}
         >
-          <Button 
-            size="lg"
-            variant="outline"
-            className="border-2 border-black hover:bg-black hover:text-white transition-all duration-300 group"
-          >
-            View All Books
-            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+          <Button asChild size="lg" variant="outline" className="border-2 border-black hover:bg-black hover:text-white transition-all duration-300 group">
+            <a href="/assets/all-books.html" target="_blank" rel="noopener noreferrer">
+              View All Books
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            </a>
           </Button>
         </div>
       </div>
@@ -961,6 +959,7 @@ function UpdatesSection() {
       title: 'The Art of Character Development',
       category: 'Writing Tips',
       image: '/images/blog-1.jpg',
+      url: '/assets/article-1.html',
       date: 'Dec 15, 2024',
       excerpt: 'Learn the secrets behind creating memorable characters that readers will love.',
     },
@@ -969,6 +968,7 @@ function UpdatesSection() {
       title: 'My Journey to Becoming an Author',
       category: 'Personal Story',
       image: '/images/blog-2.jpg',
+      url: '/assets/article-2.html',
       date: 'Dec 10, 2024',
       excerpt: 'The highs, lows, and everything in between on my path to publication.',
     },
@@ -977,6 +977,7 @@ function UpdatesSection() {
       title: 'Top 10 Books That Inspired Me',
       category: 'Recommendations',
       image: '/images/blog-3.jpg',
+      url: '/assets/article-3.html',
       date: 'Dec 5, 2024',
       excerpt: 'A curated list of must-read books that shaped my writing style.',
     },
@@ -985,6 +986,7 @@ function UpdatesSection() {
       title: 'How to Overcome Writer\'s Block',
       category: 'Writing Tips',
       image: '/images/blog-4.jpg',
+      url: '/assets/article-4.html',
       date: 'Nov 28, 2024',
       excerpt: 'Practical strategies to break through creative barriers.',
     },
@@ -993,6 +995,7 @@ function UpdatesSection() {
       title: 'Behind the Scenes: My Writing Routine',
       category: 'Process',
       image: '/images/blog-5.jpg',
+      url: '/assets/article-5.html',
       date: 'Nov 20, 2024',
       excerpt: 'A day in the life of a full-time author and creative.',
     },
@@ -1001,6 +1004,7 @@ function UpdatesSection() {
       title: 'The Future of Publishing',
       category: 'Industry Insights',
       image: '/images/blog-6.jpg',
+      url: '/assets/article-6.html',
       date: 'Nov 15, 2024',
       excerpt: 'Exploring trends and predictions for the book industry.',
     },
@@ -1041,6 +1045,7 @@ function UpdatesSection() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
               }`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}
+              onClick={() => window.open(article.url, '_blank', 'noopener,noreferrer')}
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -1069,7 +1074,9 @@ function UpdatesSection() {
                   {article.excerpt}
                 </p>
                 <a 
-                  href="#" 
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium text-coral hover:underline"
                 >
                   Read More
@@ -1087,13 +1094,11 @@ function UpdatesSection() {
           }`}
           style={{ transitionDelay: '900ms' }}
         >
-          <Button 
-            size="lg"
-            variant="outline"
-            className="border-2 border-black hover:bg-black hover:text-white transition-all duration-300 group"
-          >
-            Read All Articles
-            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+          <Button asChild size="lg" variant="outline" className="border-2 border-black hover:bg-black hover:text-white transition-all duration-300 group">
+            <a href="/assets/all-articles.html" target="_blank" rel="noopener noreferrer">
+              Read All Articles
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            </a>
           </Button>
         </div>
       </div>
@@ -1278,7 +1283,7 @@ function FooterSection() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            Stay <span className="text-coral">Updated</span>
+            Stay <span className="text-coral">Connected</span>
           </h2>
           
           <p 
@@ -1287,7 +1292,7 @@ function FooterSection() {
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            Subscribe to my newsletter for exclusive content, early access to new releases, 
+            Stay connected to what we are doing at JNL for exclusive content, early access to new releases,
             and behind-the-scenes updates.
           </p>
 

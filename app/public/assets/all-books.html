@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Books | Jones Narrative Labs</title>
+  <link rel="stylesheet" href="articles.css" />
+  <style>
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .book-card {
+      text-align: center;
+    }
+    .book-cover {
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 220px;
+      margin: 0 auto 1rem;
+      display: block;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .book-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.3; }
+    .book-author { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; font-style: italic; }
+    .book-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5; text-align: left; }
+    .book-links { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+    .book-links a {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      background: var(--coral);
+      color: white;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .book-links a:hover { background: var(--coral-dark); }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      background: rgba(255, 107, 53, 0.2);
+      color: var(--coral);
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <article class="article-container">
+    <a href="/#books" class="back-link">← Back to Publications</a>
+    <header class="article-header">
+      <h1 class="article-title">All Books</h1>
+      <p class="article-subtitle">Explore our collection of bestselling novels, each crafted with passion and purpose.</p>
+    </header>
+    <div class="books-grid">
+      <div class="book-card">
+        <img src="/images/book-1.png" alt="If My Life Were A Song" class="book-cover" />
+        <h3 class="book-title">If My Life Were A Song: A Memoir</h3>
+        <p class="book-author">by I.E. Jones III</p>
+        <p class="book-desc">A deeply personal memoir that explores the journey of life through the lens of music, revealing the melodies and harmonies that shape our existence.</p>
+        <div class="book-links">
+          <a href="https://www.amazon.com/" target="_blank" rel="noopener">Amazon</a>
+          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Barnes & Noble</a>
+          <a href="https://www.friesenpress.com/" target="_blank" rel="noopener">Friesen Press</a>
+          <a href="https://www.booksamillion.com/" target="_blank" rel="noopener">Books-A-Million</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <img src="/images/book-2.png" alt="SINCERA: The Birth of the Daemon" class="book-cover" />
+        <span class="badge">Coming 2028</span>
+        <h3 class="book-title">SINCERA: The Birth of the Daemon</h3>
+        <p class="book-author">A Philosophical Thriller (Book One of the Sine Cera Cycle)</p>
+        <p class="book-desc">The first installment of a gripping philosophical thriller series that explores the boundaries between good, evil, and the nature of consciousness itself.</p>
+        <div class="book-links">
+          <a href="https://www.amazon.com/" target="_blank" rel="noopener">Amazon</a>
+          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Barnes & Noble</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <img src="/images/book-3.png" alt="SINCERA: The Oracle's True Prophecy" class="book-cover" />
+        <span class="badge">Coming 2028</span>
+        <h3 class="book-title">SINCERA: The Oracle's True Prophecy</h3>
+        <p class="book-author">A Philosophical Thriller (Book Two of the Sine Cera Cycle)</p>
+        <p class="book-desc">The compelling sequel that delves deeper into the mysterious world of Sine Cera, where ancient prophecies and modern philosophy collide.</p>
+        <div class="book-links">
+          <a href="https://www.amazon.com/" target="_blank" rel="noopener">Amazon</a>
+          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Barnes & Noble</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <img src="/images/book-4.png" alt="Interregnum" class="book-cover" />
+        <span class="badge">Coming 2028</span>
+        <h3 class="book-title">Interregnum: The Appearing of Him To Whom The Power Belongs</h3>
+        <p class="book-author">by I.E. Jones III</p>
+        <p class="book-desc">An epic tale of power, prophecy, and transformation that explores the emergence of true leadership in times of chaos and uncertainty.</p>
+        <div class="book-links">
+          <a href="https://www.amazon.com/" target="_blank" rel="noopener">Amazon</a>
+          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Barnes & Noble</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</body>
+</html>
