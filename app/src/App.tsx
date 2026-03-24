@@ -26,6 +26,8 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
+import { ResponsiveImage } from '@/components/ui/responsive-image'
+import { OptimizedHeroImage } from '@/components/ui/optimized-hero-image'
 
 // Navigation Component
 function Navigation() {
@@ -214,14 +216,11 @@ function HeroSection() {
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden dark:bg-gray-900 transition-colors duration-300">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/images/hero-portrait.png" 
-          alt="Author Portrait" 
-          className={`w-full h-full object-cover transition-all duration-1000 ease-out-expo ${
-            isVisible ? 'scale-100 opacity-100' : 'scale-110 opacity-0'
-          }`}
+        <OptimizedHeroImage
+          priority={true}
+          isVisible={isVisible}
+          className="w-full h-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
       </div>
 
       {/* Decorative Pattern */}
