@@ -9,6 +9,7 @@ import {
   Instagram, 
   Linkedin, 
   Youtube,
+  Music,
   Mail,
   ShoppingCart,
   Sparkles,
@@ -1261,8 +1262,8 @@ function FooterSection() {
     { name: 'Twitter', icon: Twitter, href: 'https://x.com/ijones392262' },
     { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ijones392262' },
     { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ijones392262' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
-    { name: 'TikTok', icon: Youtube, href: 'https://tiktok.com/@ijones392262' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/isaac-e-jones-iii-05ba96345?utm_source=share_via&utm_content=profile&utm_medium=member_ios' },
+    { name: 'TikTok', icon: Music, href: 'https://tiktok.com/@ijones392262' },
   ]
 
   return (
