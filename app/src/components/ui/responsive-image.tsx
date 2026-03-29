@@ -6,7 +6,6 @@ interface ResponsiveImageProps {
   className?: string
   priority?: boolean
   sizes?: string
-  quality?: number
 }
 
 export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
@@ -14,11 +13,9 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   alt,
   className = '',
   priority = false,
-  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw',
-  quality = 85
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw'
 }) => {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [currentSrc, setCurrentSrc] = useState('')
 
   // Generate WebP and fallback sources
   const generateSrcSet = (baseSrc: string) => {
@@ -34,7 +31,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
     return { webpSources, fallbackSources }
   }
 
-  const { webpSources, fallbackSources } = generateSrcSet(src)
+  const { webpSources } = generateSrcSet(src)
 
   useEffect(() => {
     if (priority) {
