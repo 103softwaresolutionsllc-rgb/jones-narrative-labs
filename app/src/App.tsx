@@ -953,6 +953,15 @@ function UpdatesSection() {
 
   const articles = [
     {
+      id: 7,
+      title: 'The New Idol: From Totems to AI',
+      category: 'Philosophy',
+      image: '/images/blog-7.jpg',
+      url: '/assets/article-7.html',
+      date: 'Mar 28, 2025',
+      excerpt: 'How I Came to See Humanity\'s Oldest Impulse in Its Newest Creation - Exploring the evolution from ancient idols to artificial intelligence.',
+    },
+    {
       id: 1,
       title: 'The Art of Character Development',
       category: 'Writing Tips',
