@@ -25,8 +25,8 @@ export const OptimizedHeroImage: React.FC<OptimizedHeroImageProps> = ({
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  // Use mobile-optimized image for smaller screens
-  const imageSrc = isMobile ? '/images/hero-portrait-mobile.webp' : '/images/hero-portrait.png'
+  // Use the new hero portrait image
+  const imageSrc = '/images/hero-portrait.jpg'
   
   // Different sizes for mobile vs desktop
   const sizes = isMobile 
@@ -35,24 +35,8 @@ export const OptimizedHeroImage: React.FC<OptimizedHeroImageProps> = ({
 
   return (
     <div className={`relative ${className}`}>
-      <picture>
-        {/* WebP sources for modern browsers */}
-        <source
-          type="image/webp"
-          srcSet={
-            isMobile 
-              ? '/images/hero-portrait-mobile.webp'
-              : `/images/hero-portrait-400w.webp 400w,
-                 /images/hero-portrait-800w.webp 800w,
-                 /images/hero-portrait-1200w.webp 1200w,
-                 /images/hero-portrait-1600w.webp 1600w,
-                 /images/hero-portrait-1920w.webp 1920w`
-          }
-          sizes={sizes}
-        />
-        
-        {/* Fallback for older browsers */}
-        <img
+      {/* Fallback image */}
+      <img
           src={imageSrc}
           alt="Author Portrait"
           className={`w-full h-full object-cover transition-all duration-1000 ease-out-expo ${
@@ -63,7 +47,6 @@ export const OptimizedHeroImage: React.FC<OptimizedHeroImageProps> = ({
           decoding={priority ? 'sync' : 'async'}
           onLoad={() => setIsLoaded(true)}
         />
-      </picture>
       
       {/* Enhanced gradient overlay for better text visibility on mobile */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent md:from-black/70 md:via-black/50 md:to-transparent" />
