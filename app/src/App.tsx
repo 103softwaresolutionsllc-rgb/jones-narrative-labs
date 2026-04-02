@@ -259,9 +259,7 @@ function HeroSection() {
               isVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'
             }`}
             style={{ transitionDelay: '400ms' }}
-          >
-            Award-winning storytellers at Jones Narrative Labs crafting contemporary fiction that captivates, inspires, and transforms. 
-            Explore a world of stories waiting to be told.
+          >At Jones Narrative Labs (JNL), we don't just write; we architect contemporary fiction and nonfiction that captivates and transforms. Step into a world of stories curated for the discerning reader.
           </p>
 
           {/* CTAs */}
