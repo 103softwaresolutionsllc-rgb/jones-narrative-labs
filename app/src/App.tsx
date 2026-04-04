@@ -482,7 +482,6 @@ function BooksSection() {
       cover: '/images/book-1.png',
       description: 'A deeply personal memoir that explores the journey of life through the lens of music, revealing the melodies and harmonies that shape our existence.',
       price: 'From $7.99',
-      rating: 4.9,
       year: '2024',
       status: 'available',
       commercial: 'https://www.tiktok.com/t/ZP8baP2Am/',
@@ -501,11 +500,10 @@ function BooksSection() {
     {
       id: 2,
       title: 'SINCERA: The Birth of the Daemon',
-      author: 'A Philosophical Thriller (Book One of the Sine Cera Cycle)',
+      author: 'by I.E. Jones III',
       cover: '/images/book-2.png',
       description: 'The first installment of a gripping philosophical thriller series that explores the boundaries between good, evil, and the nature of consciousness itself.',
       price: '$22.99',
-      rating: 4.8,
       year: '2028',
       status: 'upcoming',
       commercial: null,
@@ -523,7 +521,6 @@ function BooksSection() {
       cover: '/images/book-3.png',
       description: 'The compelling sequel that delves deeper into the mysterious world of Sine Cera, where ancient prophecies and modern philosophy collide.',
       price: '$21.99',
-      rating: 4.7,
       year: '2028',
       status: 'upcoming',
       commercial: null,
@@ -541,7 +538,6 @@ function BooksSection() {
       cover: '/images/book-4.png',
       description: 'An epic tale of power, prophecy, and transformation that explores the emergence of true leadership in times of chaos and uncertainty.',
       price: '$23.99',
-      rating: 4.9,
       year: '2028',
       status: 'upcoming',
       commercial: null,
@@ -628,9 +624,6 @@ function BooksSection() {
                     <p className="text-sm text-muted-foreground mb-2 italic">{book.author}</p>
                   )}
                   <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-2">
-                    <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                    <span>{book.rating}</span>
-                    <span>•</span>
                     <span>{book.year}</span>
                   </div>
                   {book.status === 'upcoming' && (
@@ -697,28 +690,63 @@ function BooksSection() {
 
                 {/* Details */}
                 <div className="space-y-6">
-                  {selectedBook.commercial && (
-                    <div>
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
-                        <Play className="w-5 h-5 text-coral" />
-                        Watch Commercial
-                      </h4>
-                      <div className="aspect-video rounded-lg overflow-hidden bg-black">
-                        <a 
-                          href={selectedBook.commercial}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full h-full flex items-center justify-center text-white hover:text-coral transition-colors group"
-                        >
-                          <div className="flex flex-col items-center">
-                            <Play className="w-12 h-12 mb-2 group-hover:scale-110 transition-transform" />
-                            <span className="text-sm font-medium">{selectedBook.title} - Commercial</span>
-                            <span className="text-xs text-white/70">Click to open in new tab</span>
-                          </div>
-                        </a>
-                      </div>
+                  {/* Video Commercials */}
+                  <div>
+                    <h4 className="font-semibold mb-3 flex items-center gap-2">
+                      <Play className="w-5 h-5 text-coral" />
+                      Watch the Commercials
+                    </h4>
+                    <div className="grid grid-cols-1 gap-4">
+                      {selectedBook.commercial && (
+                        <div className="aspect-video rounded-lg overflow-hidden bg-black">
+                          <a 
+                            href={selectedBook.commercial}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full h-full flex items-center justify-center text-white hover:text-coral transition-colors group"
+                          >
+                            <div className="flex flex-col items-center">
+                              <Play className="w-12 h-12 mb-2 group-hover:scale-110 transition-transform" />
+                              <span className="text-sm font-medium">{selectedBook.title} - Commercial 1</span>
+                              <span className="text-xs text-white/70">Click to open in new tab</span>
+                            </div>
+                          </a>
+                        </div>
+                      )}
+                      {selectedBook.id === 1 && (
+                        <div className="aspect-video rounded-lg overflow-hidden bg-black">
+                          <a 
+                            href="https://www.tiktok.com/t/ZP8baDgvL/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full h-full flex items-center justify-center text-white hover:text-coral transition-colors group"
+                          >
+                            <div className="flex flex-col items-center">
+                              <Play className="w-12 h-12 mb-2 group-hover:scale-110 transition-transform" />
+                              <span className="text-sm font-medium">{selectedBook.title} - Commercial 2</span>
+                              <span className="text-xs text-white/70">Click to open in new tab</span>
+                            </div>
+                          </a>
+                        </div>
+                      )}
+                      {!selectedBook.commercial && selectedBook.id !== 1 && (
+                        <div className="aspect-video rounded-lg overflow-hidden bg-black">
+                          <a 
+                            href="/videos/coming-soon.mp4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full h-full flex items-center justify-center text-white hover:text-coral transition-colors group"
+                          >
+                            <div className="flex flex-col items-center">
+                              <Play className="w-12 h-12 mb-2 group-hover:scale-110 transition-transform" />
+                              <span className="text-sm font-medium">{selectedBook.title} - Coming Soon</span>
+                              <span className="text-xs text-white/70">Click to preview</span>
+                            </div>
+                          </a>
+                        </div>
+                      )}
                     </div>
-                  )}
+                  </div>
 
                   {/* Purchase Links */}
                   <div>
@@ -769,13 +797,8 @@ function BooksSection() {
                   {/* Book Stats */}
                   <div className="flex items-center gap-6 p-4 rounded-lg bg-secondary">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-coral">{selectedBook.rating}</div>
-                      <div className="text-xs text-muted-foreground">Rating</div>
-                    </div>
-                    <div className="w-px h-10 bg-border" />
-                    <div className="text-center">
-                      <div className="text-2xl font-bold">{selectedBook.year}</div>
-                      <div className="text-xs text-muted-foreground">Published</div>
+                      <div className="text-2xl font-bold text-coral">{selectedBook.year}</div>
+                      <div className="text-xs text-muted-foreground">Release Year</div>
                     </div>
                     <div className="w-px h-10 bg-border" />
                     <div className="text-center">
@@ -797,8 +820,6 @@ function BooksSection() {
 function VideoSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -817,20 +838,6 @@ function VideoSection() {
 
     return () => observer.disconnect()
   }, [])
-
-  const handlePlayVideo = () => {
-    if (videoRef.current) {
-      videoRef.current.play()
-      setIsPlaying(true)
-    }
-  }
-
-  const handleVideoEnd = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0
-      videoRef.current.play()
-    }
-  }
 
   return (
     <section 
@@ -865,44 +872,61 @@ function VideoSection() {
           }`}
           style={{ transitionDelay: '300ms' }}
         >
-          <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lift-lg">
-            {!isPlaying ? (
-              // Thumbnail with play button
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* First Commercial */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lift-lg group">
               <div 
-                className="w-full h-full bg-cover bg-center bg-no-repeat relative cursor-pointer"
+                className="w-full h-full bg-cover bg-center bg-no-repeat relative"
                 style={{ 
                   backgroundImage: 'url(/images/commercial-1-thumbnail.png)',
                   backgroundSize: 'contain',
                   backgroundPosition: 'center',
                   backgroundColor: '#000'
                 }}
-                onClick={handlePlayVideo}
               >
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex flex-col items-center justify-center text-white hover:text-coral transition-colors">
-                    <div className="w-20 h-20 bg-coral/80 rounded-full flex items-center justify-center mb-4 hover:scale-110 transition-transform">
-                      <Play className="w-10 h-10 text-white" />
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a 
+                    href="https://www.tiktok.com/t/ZP8baP2Am/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center text-white hover:text-coral transition-colors"
+                  >
+                    <div className="w-16 h-16 bg-coral/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <Play className="w-8 h-8 text-white" />
                     </div>
-                    <span className="text-xl font-bold">Official Book Trailer</span>
-                    <span className="text-sm text-white/70 mt-2">Click to play</span>
-                  </div>
+                    <span className="text-lg font-medium">Commercial 1</span>
+                    <span className="text-sm text-white/80">TikTok - Click to play</span>
+                  </a>
                 </div>
               </div>
-            ) : (
-              // Video player with loop
-              <video 
-                ref={videoRef}
-                className="w-full h-full object-cover"
-                controls
-                autoPlay
-                loop
-                onEnded={handleVideoEnd}
-                preload="metadata"
+            </div>
+            {/* Second Commercial */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lift-lg group">
+              <div 
+                className="w-full h-full bg-cover bg-center bg-no-repeat relative"
+                style={{ 
+                  backgroundImage: 'url(/images/commercial-2-thumbnail.png)',
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundColor: '#000'
+                }}
               >
-                <source src="/videos/coming-soon.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            )}
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a 
+                    href="https://www.tiktok.com/t/ZP8baDgvL/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center text-white hover:text-coral transition-colors"
+                  >
+                    <div className="w-16 h-16 bg-coral/80 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <Play className="w-8 h-8 text-white" />
+                    </div>
+                    <span className="text-lg font-medium">Commercial 2</span>
+                    <span className="text-sm text-white/80">TikTok - Click to play</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
