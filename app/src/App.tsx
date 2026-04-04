@@ -500,7 +500,7 @@ function BooksSection() {
     {
       id: 2,
       title: 'SINCERA: The Birth of the Daemon',
-      author: 'by I.E. Jones III',
+      author: 'A Philosophical Thriller (Book One of the Sine Cera Cycle) by I.E. Jones III',
       cover: '/images/book-2.png',
       description: 'The first installment of a gripping philosophical thriller series that explores the boundaries between good, evil, and the nature of consciousness itself.',
       price: '$22.99',
@@ -517,7 +517,7 @@ function BooksSection() {
     {
       id: 3,
       title: 'SINCERA: The Oracle\'s True Prophecy',
-      author: 'A Philosophical Thriller (Book Two of the Sine Cera Cycle)',
+      author: 'A Philosophical Thriller (Book Two of the Sine Cera Cycle) by I.E. Jones III',
       cover: '/images/book-3.png',
       description: 'The compelling sequel that delves deeper into the mysterious world of Sine Cera, where ancient prophecies and modern philosophy collide.',
       price: '$21.99',
