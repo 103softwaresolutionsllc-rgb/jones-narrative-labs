@@ -572,7 +572,7 @@ function BooksSection() {
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            Explore our collection of bestselling novels, each crafted with passion and purpose
+            Explore our collection of books both fiction and nonfiction, each crafted with passion and purpose
           </p>
         </div>
 
