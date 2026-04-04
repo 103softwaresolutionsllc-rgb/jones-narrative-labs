@@ -1387,8 +1387,8 @@ function FooterSection() {
             <p>© 2024 Jones Narrative Labs. All rights reserved.</p>
             <p className="text-xs text-white/30 mt-1">Created by 103 Software Solutions LLC</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-coral transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-coral transition-colors">Terms of Service</a>
+              <a href="https://103softwaresolutions.com/privacy.html" className="hover:text-coral transition-colors">Privacy Policy</a>
+              <a href="https://103softwaresolutions.com/terms.html" className="hover:text-coral transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
