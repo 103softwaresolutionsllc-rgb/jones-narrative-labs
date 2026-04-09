@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jones-narrative-labs.vercel.app/sitemap.xml
